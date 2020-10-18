@@ -1,0 +1,211 @@
+
+<html>
+<head>
+<!-- <embed src="./home/backg.mp3" autostart="true" loop="true"
+width="2" height="0">
+</embed> -->
+
+<style>
+body{
+background-image: url("./home/images/1.png");
+background-repeat: no-repeat;
+background-size: 100% 680px;
+background-color:#E77471;
+}
+
+#jean{
+width:100%;
+height:100%;
+}
+.head{
+width:100%;
+height:98%;
+}
+.header{
+width:900px;
+height:90px;
+background-image:url("./home/images/hea.png");
+background-repeat: no-repeat;
+}
+.header1{
+width:900px;
+height:70px;
+}
+.contain{
+width:780px;
+height:270px;
+border:5px groove #FF00BF;
+}
+.c1{
+float:left;
+width:240px;
+height:280px;
+}
+.c2{
+margin-top:5px;
+background-color:#E42217;
+float:left;
+background-image:url("./home/images/balloon.png");
+background-repeat:no-repeat;
+background-size: 280px 250px;
+width:280px;
+height:250px;
+border-radius:75px;
+}
+.c3{
+float:left;
+width:240px;;
+height:280px;
+}
+.p1{
+width:220px;
+height:260px;
+background:transparent url("./home/images/deep.jpg") no-repeat;
+background-size:220px 300px;
+border:5px solid black;
+border-radius:125px;
+}
+.p2{
+width:220px;
+height:260px;
+background: transparent url("./home/images/baliw.jpg") no-repeat;
+background-size:220px 305px;
+border:5px solid black;
+border-radius:125px;
+}
+ul
+{
+width: 150px;
+list-style:none;
+  }
+ul li a
+{
+text-decoration:none;
+font-size:16px;
+display: block;
+border-bottom:1px inset #E55451;
+border-radius:25px;
+}
+ul li a:hover
+{
+text-decoration:none;
+  text-indent:10px;
+  border-bottom: 2px inset #FF00FF;
+  border-radius:25px;
+   font-size:18px;
+   }
+.space{
+   width:800px;
+   height:140px;
+   }
+.foot{
+   width:800px;
+   height:80px;
+   background:transparent url(./home/images/foot.png) no-repeat;
+background-size:800px 100px;
+}
+#jean img {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+	}
+</style>
+</head>
+<title>Home</title>
+<body onload="togglePlay()">
+
+	<div id="jean" align="center">
+<div class="Head">
+<div id="track" >
+	<img id="musicTrack" src="./home/images/pause.png" onclick="togglePlay();" style="position:absolute;right:20px;width:50px;height:50px;">
+</div>
+<div class="header" align="center"></div>
+<div class="header1"></div>
+<div class="contain" align="center">
+<div class="c1">
+<div class="p1" title="Deepak"></div></div>
+<div class="c2">
+<ul>
+<li><a href="./valentine.html"><font color="#FFD801" title="Valentine Purposed on feb,2015">&#8668;Valentine Purpose&#8669;</font></a></li>
+<li><a href="./letter.html"><font color="#FFD801" title="Wrote a Letter to be strong in all situation for me">&#8668;Love Letter&#8669;</font></a></li>
+<li><a href="./birthday.html"><font color="#FFD801" title="Created a page for My angel birthday">&#8668;Jean Birthday&#8669;</font></a></li>
+<li><a href="./her.html"><font color="#FFD801" title="About her and mine Love story">&#8668;About Her&#8669;</font></a></li>
+<li><a href="./Special.html"><font color="#FFD801" title="What made our relation more strong">&#8668;Special in Jean&#8669;</font></a></li>
+<li><a href="./Feelings.html"><font color="#FFD801" title="My Feelings which feel for her">&#8668;Beautiful Feelings&#8669;</font></a></li>
+<li><a href="./lip.html"><font color="#FFD801" title="My feelings which comes out when i fall in love">&#8668;Love Feelings&#8669;</font></a></li>
+</ul>
+</div>
+<div class="c3">
+<div class="p2"  title="Jean"></div>
+</div>
+</div>
+<div class="space"></div>
+<div class="foot" align="center"></div>
+</div>
+</div>
+<script type="text/javascript">
+var STARCOUNT = 40;
+var pix = [ ];
+var stars = [ ];
+var fld = document.getElementById("jean");
+
+for ( var p = 0; p < 10; ++p )
+{
+    var image = new Image();
+    image.src = "./home/images/star" + p + ".gif";
+    pix[p] = image;
+}
+
+for ( var s = 0; s < STARCOUNT; ++ s )
+{
+    var x = Math.floor( Math.random() * 1200 );
+    var y = Math.floor( Math.random() * 600 );
+    var image = document.createElement("img");
+    image.src = pix[s % 10].src;
+    image.style.left = x + "px";
+    image.style.top  = y + "px";
+    stars.push(image);
+    fld.appendChild(image);
+}
+
+function twinkle( )
+{
+    for ( var n = 1; n <= 40; ++n )
+    {
+        var s = Math.floor( Math.random() * STARCOUNT );
+        var image = stars[s];
+        var p = Math.floor( Math.random() * 10 );
+        image.src = pix[p].src;
+    }
+}
+setInterval( twinkle, 100 );
+</script>
+<audio src="./home/backgroundTrack.mp3" id="backgroundMusic">
+<p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
+<script>
+var audioElm = document.getElementById("backgroundMusic"); // Audio element
+function togglePlay() {
+         if (document.getElementById("backgroundMusic")) {
+
+           if (audioElm.paused == true) {
+             playAudio(audioElm);    //  if player is paused, then play the file
+           } else {
+             pauseAudio(audioElm);   //  if player is playing, then pause
+           }
+         }
+       }
+	   function playAudio(audioElm) {
+         document.getElementById("musicTrack").src = "./home/images/stop.png"; // Set button text == Pause
+         // Get file from text box and assign it to the source of the audio element 
+         audioElm.src = document.getElementById('backgroundMusic').src;
+         audioElm.play();
+       }
+
+       function pauseAudio(audioElm) {
+         document.getElementById("musicTrack").src = "./home/images/play.png"; // Set button text == Play
+         audioElm.pause();
+       }
+</script>
+</body>
+		</html>

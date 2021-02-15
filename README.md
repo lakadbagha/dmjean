@@ -1,3 +1,3 @@
 # dmjean
 
-is a romantic website tributed to my x girl friend
+is a romantic website dedicated to my beloved girl friend
